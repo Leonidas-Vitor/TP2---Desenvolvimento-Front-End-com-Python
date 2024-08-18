@@ -13,8 +13,8 @@ import time
 
 st.title("TP2 - Desenvolvimento Front-End com Python")
 
-df_1 = pd.read_csv('data/HIST_PAINEL_COVIDBR_2021_Parte1_10ago2024.csv', sep=';')
-df_2 = pd.read_csv('data/HIST_PAINEL_COVIDBR_2021_Parte2_10ago2024.csv', sep=';')
+df_1 = pd.read_csv('https://api.onedrive.com/v1.0/shares/s!Asuw4D2AHTOZmZ1Y4DEo06n0wxvurw/root/content', sep=';')
+df_2 = pd.read_csv('https://api.onedrive.com/v1.0/shares/s!Asuw4D2AHTOZmZ1JcL7FojJ8B7yRKA/root/content', sep=';')
 df = pd.concat([df_1, df_2])
 
 st.subheader("1 - Importância da Visualização de Dados:",divider=True)
