@@ -22,8 +22,6 @@ def load_data():
     df = df[df['regiao'] != 'Brasil']
     df = df[df['municipio'].notna()]
 
-
-    df_coords = pd.read_csv('data\municipios_coords.csv', sep=',')
     df_coords.drop_duplicates(subset=['regiao', 'municipio'],inplace=True)
     df_coords['chave'] = df_coords['regiao'] + '_' + df_coords['municipio']
 
