@@ -45,6 +45,15 @@ st.subheader("1 - Importância da Visualização de Dados:",divider=True)
 # Como essas visualizações podem ajudar gestores de saúde pública e a população em geral a 
 # tomar decisões informadas?
 
+st.markdown('''**R.:** A visualização de dados é fundamental no contexto de uma pandemia como a COVID-19
+porque permite a análise e interpretação de informações complexas de forma clara e acessível.
+As visualizações de dados podem ajudar gestores de saúde pública a identificar tendências, padrões
+e anomalias nos dados epidemiológicos, facilitando a tomada de decisões informadas sobre políticas
+de saúde, alocação de recursos e implementação de medidas de controle da pandemia. Além disso, as
+visualizações de dados podem ajudar a população em geral a compreender a gravidade da situação, a
+adotar comportamentos preventivos e a se engajar em ações de combate à disseminação do vírus.''')
+
+
 st.subheader("2 - Gráfico de Barras com Streamlit:",divider=True)
 
 #Usando os dados de casos novos de COVID-19 por semana epidemiológica de notificação, crie um gráfico
@@ -307,7 +316,7 @@ df_mapa = df_regiao.groupby(['municipio','latitude','longitude']).agg({'casosAcu
 
 df_mapa['densidade'] = df_mapa['casosAcumulado'] / df_mapa['populacaoTCU2019']
 
-df_mapa['densidade'] = df_mapa['densidade'] * 10000
+df_mapa['densidade'] = df_mapa['densidade'] * 25000
 
 view = pdk.data_utils.compute_view(df_mapa[['longitude','latitude']])
 layer = pdk.Layer('ScatterplotLayer', data = df_mapa, get_position = ['longitude','latitude'], get_radius = 'densidade', get_fill_color = [255,0,0], pickable = True)
